@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="wellcome_message">Bem vindo(a) ao calculador de tinta !</h1>
+
+        <p class="description">
+            Aqui você vai poder calcular o quanto de tinta será necessario para pintar seu cômodo de 4 paredes.
+        </p>
+
+    </header>
+
+
+    <div class="web_body">
+
+
+        <h3 class="dimensions_title">
+            Medidas <br>
+            <p class="rule">Colocar apenas números, sem o "m²".
+            <p>
+        </h3>
+
+        <label for="" class="label">Altura da parede 1:</label><br>
+        <input type="number" class="measurements" id="height1"><br><br>
+
+        <label for="" class="label">Largura da parede 1:</label><br>
+        <input type="number" class="measurements" id="width1"><br><br>
+
+        <!-- ------------------------------------------------------------------ -->
+
+        <label for="" class="label">Altura da parede 2:</label><br>
+        <input type="number" class="measurements" id="height2"><br><br>
+
+        <label for="" class="label">Largura da parede 2:</label><br>
+        <input type="number" class="measurements" id="width2"><br><br>
+
+        <!-- ------------------------------------------------------------------ -->
+
+        <label for="" class="label">Altura da parede 3:</label><br>
+        <input type="number" class="measurements" id="height3"><br><br>
+
+        <label for="" class="label">Largura da parede 3:</label><br>
+        <input type="number" class="measurements" id="width3"><br><br>
+
+        <!-- ------------------------------------------------------------------ -->
+
+        <label for="" class="label">Altura da parede 4:</label><br>
+        <input type="number" class="measurements" id="height4"><br><br>
+
+        <label for="" class="label">Largura da parede 4:</label><br>
+        <input type="number" class="measurements" id="width4"><br><br>
+
+        <!-- ------------------------------------------------------------------ -->
+
+        <label for="" class="label">Quantas portas existem ?</label><br>
+        <input type="number" class="measurements" id="dor_number"><br><br>
+
+        <label for="" class="label">Quantas janelas existem ?</label><br>
+        <input type="number" class="measurements" id="window_number"><br><br>
+
+        <button type="button" class="do_calculate" id="btn_calculate" onclick="OnClick()">Calcular</button>
+
+        <div class = "result_box" >
+            <p id="result" class = "result"></p>
+        </div>
+
+
+    </div>
+
+    <script>
+        function OnClick() {
+            let height1 = document.getElementById('height1').value;
+            let width1 = document.getElementById('width1').value;
+
+            let height2 = document.getElementById('height2').value;
+            let width2 = document.getElementById('width2').value;
+
+            let height3 = document.getElementById('height3').value;
+            let width3 = document.getElementById('width3').value;
+
+            let height4 = document.getElementById('height4').value;
+            let width4 = document.getElementById('width4').value;
+
+            let dor_number = document.getElementById('dor_number').value;
+
+            let window_number = document.getElementById('window_number').value;
+
+            let result = document.getElementById('result');
+
+
+            fetch('Calculate.php',
+                {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        height1,
+                        width1,
+                        height2,
+                        width2,
+                        height3,
+                        width3,
+                        height4,
+                        width4,
+                        dor_number,
+                        window_number,
+                    }),
+                    headers: {
+                        'Content-type': 'application/json'
+                    }
+                }
+            )
+                .then(function (response) {
+                    return response.json();
+
+                })
+                .then(function (data) {
+                    console.log(data.final_message);
+                    result.innerHTML = data.final_message;
+
+                })
+        }
+
+
+    </script>
+</body>
+
+</html>

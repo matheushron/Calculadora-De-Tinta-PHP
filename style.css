@@ -1,0 +1,109 @@
+html,
+body {
+    padding: 0%;
+    margin: 0%;
+    background-color: rgba(243, 237, 230, 0.895);
+
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(203, 142, 20);
+}
+
+.wellcome_message {
+    /* position: relative; left:2em;top:20%; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0%;
+    color: rgb(0, 0, 0);
+}
+
+.description {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* position: relative; left:4em; */
+}
+
+.web_body {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+}
+
+.dimensions {
+    position: relative;
+    left: 30%;
+    width: 40%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: rgb(147, 97, 59);
+
+    /* bordas: */
+    border-radius: 20%;
+}
+
+.dimensions_title {
+    text-align: center;
+    /* position:relative;left:45%; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2em;
+}
+
+.rule {
+    text-align: center;
+    /* position:relative;left:-3.2em; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 12px;
+}
+
+.label {
+    position: relative;
+    left: 24%;
+    font-size: 17px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.measurements {
+    position: relative;
+    left: 24%;
+    height: 30px;
+    width: 50%;
+
+    /* bordas: */
+    border-radius: 5px;
+    border: none;
+}
+
+.do_calculate {
+    width: 50%;
+    background-color: rgb(235, 215, 191);
+    position: relative;
+    left: 24%;
+    height: 30px;
+
+    /* bordas: */
+    border: none;
+
+    cursor: pointer;
+
+}
+.result_box{
+    position: relative;left: 40%;top:1em;
+
+    background-color: rgba(102, 189, 102, 0.39);
+    height: auto;
+    width: 300px;
+
+    padding:1em;
+
+    /* bordas: */
+    border-radius: 5px;
+}
+.result{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
